@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  #textAreaContainer {
+    margin: 20px;
+  }
+</style>
+</head>
+<body>
+
+<div id="textAreaContainer">
+  <textarea id="textInput" rows="5" cols="50">This is a textarea.</textarea>
+  <div>
+    <button id="italicButton">Italic</button>
+    <button id="boldButton">Bold</button>
+    <button id="underlineButton">Underline</button>
+    <input type="number" id="fontSizeInput" placeholder="Font Size">
+    <input type="color" id="fontColorInput">
+  </div>
+</div>
+
+<script>
+var textInput = document.getElementById("textInput");
+var italicButton = document.getElementById("italicButton");
+var boldButton = document.getElementById("boldButton");
+var underlineButton = document.getElementById("underlineButton");
+var fontSizeInput = document.getElementById("fontSizeInput");
+var fontColorInput = document.getElementById("fontColorInput");
+
+italicButton.addEventListener("click", function() {
+  textInput.style.fontStyle = "italic";
+});
+
+boldButton.addEventListener("click", function() {
+  textInput.style.fontWeight = "bold";
+});
+
+underlineButton.addEventListener("click", function() {
+  textInput.style.textDecoration = "underline";
+});
+
+fontSizeInput.addEventListener("input", function() {
+  textInput.style.fontSize = fontSizeInput.value + "px";
+});
+
+fontColorInput.addEventListener("input", function() {
+  textInput.style.color = fontColorInput.value;
+});
+</script>
+
+</body>
+</html>
